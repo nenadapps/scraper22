@@ -1,3 +1,4 @@
+#northwind
 from bs4 import BeautifulSoup
 import datetime
 from random import randint
@@ -86,7 +87,7 @@ def get_details(url):
     
     try:
         raw_text = html.select('.product-single__desc')[0].get_text().strip()
-        stamp['raw_text'] = raw_text
+        stamp['raw_text'] = raw_text.replace('\xa0',' ')
     except:
         stamp['raw_text'] = None
         
