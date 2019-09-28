@@ -68,7 +68,7 @@ def get_details(url):
         image_items = html.select('.product-single__thumb')
         if image_items:
             for image_item in image_items:
-                img_temp = image_item.get('src').replace('_compact', '_1024x1024')
+                img_temp = image_item.get('href').replace('//', '')
                 if img_temp:
                     img_parts = img_temp.split('?v=') 
                     img = img_parts[0]
